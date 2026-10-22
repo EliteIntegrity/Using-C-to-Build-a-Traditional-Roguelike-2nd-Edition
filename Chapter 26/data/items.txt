@@ -1,0 +1,246 @@
+# The items of Amulets of SDL: one record for each kind. The record's type
+# is the item's class: [potion], [scroll], [weapon], [armor], [bow],
+# [missile], [gold] or [amulet]. The game reads this file when it starts,
+# so a change here needs no recompiling: save the file, and start the game
+# again.
+#
+# Every record has these keys, in any order:
+#   id         its name in the data files: lowercase letters, digits and _
+#   name       the kind's own name, as in "a potion of healing"
+#   tile       its picture's name in assets/tiles.txt
+#   frequency  how common it is: a kind with 10 is found twice as often as
+#              one with 5, and one with 0 never
+#
+# And a record of each class has more:
+#   [potion] and [scroll]:
+#     effect   heal, heal_fully, strengthen, teleport, map_floor,
+#              identify, poison, regenerate, confuse, frighten,
+#              lightning or fireball, which the player aims
+#   [weapon]:
+#     damage   what each blow does, from and to, before strength and the
+#              target's defense
+#     thrown   yes if it's made to be thrown, as a dagger is; leave it out
+#              for no
+#   [armor]:
+#     defense  taken off the damage of every blow the wearer takes
+#     noisy    yes if walking in it makes a noise; leave it out for no
+#   [bow]:
+#     damage   what each arrow it fires does, from and to, before the
+#              target's defense
+#     range    how far it shoots, in cells
+#   [missile]:
+#     found    how many are found together, from and to
+#     thrown   yes for a missile that's thrown, as a dart is; leave it out
+#              for an arrow, which is fired from a bow
+#     damage   for one that's thrown: what it does, from and to
+#
+# The game needs gold, which lies in piles of its own, the amulet, and
+# the arrow, which archers' arrows look like as they fly. Gold and the
+# amulet are never chosen as items. There can be up to 10 kinds of potion,
+# one for each color.
+#
+# A line starting with # is a comment, and blank lines don't matter. A
+# mistake stops the game, and names the line it's on.
+
+# Potions: ! in the glyph view, and a color each run until known
+
+[potion]
+id        = potion_of_healing
+name      = healing
+tile      = potion
+frequency = 7
+effect    = heal
+
+[potion]
+id        = potion_of_greater_healing
+name      = greater healing
+tile      = potion
+frequency = 4
+effect    = heal_fully
+
+[potion]
+id        = potion_of_strength
+name      = strength
+tile      = potion
+frequency = 3
+effect    = strengthen
+
+[potion]
+id        = potion_of_poison
+name      = poison
+tile      = potion
+frequency = 5
+effect    = poison
+
+[potion]
+id        = potion_of_regeneration
+name      = regeneration
+tile      = potion
+frequency = 4
+effect    = regenerate
+
+[potion]
+id        = potion_of_confusion
+name      = confusion
+tile      = potion
+frequency = 5
+effect    = confuse
+
+# Scrolls: ? in the glyph view, and a title each run until known
+
+[scroll]
+id        = scroll_of_teleportation
+name      = teleportation
+tile      = scroll
+frequency = 5
+effect    = teleport
+
+[scroll]
+id        = scroll_of_magic_mapping
+name      = magic mapping
+tile      = scroll
+frequency = 4
+effect    = map_floor
+
+[scroll]
+id        = scroll_of_identify
+name      = identify
+tile      = scroll
+frequency = 6
+effect    = identify
+
+[scroll]
+id        = scroll_of_fear
+name      = fear
+tile      = scroll
+frequency = 4
+effect    = frighten
+
+[scroll]
+id        = scroll_of_lightning
+name      = lightning
+tile      = scroll
+frequency = 4
+effect    = lightning
+
+[scroll]
+id        = scroll_of_fireball
+name      = fireball
+tile      = scroll
+frequency = 3
+effect    = fireball
+
+# Weapons: ) in the glyph view
+
+[weapon]
+id        = dagger
+name      = dagger
+tile      = dagger
+frequency = 3
+damage    = 1 4
+thrown    = yes
+
+[weapon]
+id        = short_sword
+name      = short sword
+tile      = sword
+frequency = 2
+damage    = 2 6
+
+[weapon]
+id        = spear
+name      = spear
+tile      = spear
+frequency = 2
+damage    = 2 8
+
+[weapon]
+id        = mace
+name      = mace
+tile      = mace
+frequency = 2
+damage    = 3 7
+
+[weapon]
+id        = long_sword
+name      = long sword
+tile      = sword
+frequency = 1
+damage    = 3 9
+
+# Armor: [ in the glyph view
+
+[armor]
+id        = leather_armor
+name      = leather armor
+tile      = leather-armor
+frequency = 3
+defense   = 1
+
+[armor]
+id        = chain_mail
+name      = chain mail
+tile      = metal-armor
+frequency = 2
+defense   = 3
+
+[armor]
+id        = plate_armor
+name      = plate armor
+tile      = metal-armor
+frequency = 1
+defense   = 5
+noisy     = yes
+
+# Bows: } in the glyph view. A bow fires the arrows in the quiver
+
+[bow]
+id        = short_bow
+name      = short bow
+tile      = bow
+frequency = 2
+damage    = 2 7
+range     = 8
+
+[bow]
+id        = long_bow
+name      = long bow
+tile      = bow
+frequency = 1
+damage    = 3 10
+range     = 10
+
+# Missiles: { in the glyph view, found in stacks
+
+[missile]
+id        = arrow
+name      = arrow
+tile      = arrows
+frequency = 3
+found     = 6 12
+
+[missile]
+id        = dart
+name      = dart
+tile      = darts
+frequency = 2
+found     = 4 8
+thrown    = yes
+damage    = 1 3
+
+# Gold: $ in the glyph view. A pile's count is its number of pieces
+
+[gold]
+id        = gold
+name      = gold
+tile      = gold
+frequency = 0
+
+# The Amulet of SDL: " in the glyph view. There are three in a run, one in
+# a vault on each of floors 3, 6 and 9, and finding all three is the goal
+
+[amulet]
+id        = amulet
+name      = Amulet of SDL
+tile      = amulet
+frequency = 0

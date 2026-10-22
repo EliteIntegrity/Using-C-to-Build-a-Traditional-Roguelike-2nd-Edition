@@ -1,0 +1,45 @@
+# Amulets of SDL's tiles. Each line is a tile's name, then its column and
+# row in tiles.png. Every tile is 32 x 32 pixels, in a 34 x 34 slot with a
+# 1-pixel border. Lines that start with # are comments, and blank lines
+# are skipped
+wall              0 0
+floor             1 0
+player            2 0
+giant-white-rat   3 0
+jackal            4 0
+kobold            5 0
+goblin            6 0
+fruit-bat         7 0
+shrieker          0 1
+potion            1 1
+scroll            2 1
+dagger            3 1
+sword             4 1
+mace              5 1
+spear             6 1
+leather-armor     7 1
+metal-armor       0 2
+cave-spider       1 2
+stairs            2 2
+cave-orc          3 2
+wolf              4 2
+zombified-kobold  5 2
+giant-spider      6 2
+skeleton-orc      7 2
+ogre              0 3
+forest-troll      1 3
+shadow-hound      2 3
+vampire           3 3
+gold              4 3
+grizzly-bear      5 3
+dirt              6 3
+door              7 3
+open-door         0 4
+trap              1 4
+amulet            2 4
+young-red-dragon  3 4
+bow               4 4
+arrows            5 4
+darts             6 4
+novice-archer     7 4
+dusk-elf-mage     0 5

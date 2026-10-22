@@ -1,0 +1,67 @@
+# The classes of Amulets of SDL: the player chooses one at the start of
+# each run, from the class menu, which offers them in this file's order,
+# as a, b, c and so on, up to six. The game reads this file when it
+# starts, so a change here needs no recompiling: save the file, and start
+# the game again.
+#
+# Every [class] record has these keys, in any order:
+#   id        its name in a save: lowercase letters, digits and _
+#   name      its name on the screen
+#   tile      its picture's name in assets/tiles.txt
+#   hp        its health, at the start and at most
+#   strength  added to the damage of every blow
+#   defense   taken off the damage of every blow it takes, before armor
+#             adds its own
+#   kit       what it starts with, by the items' ids in items.txt. For
+#             more than one of a kind that stacks, the id has a colon and
+#             how many after it, as in arrow:20. The kit's first weapon is
+#             wielded, its first armor worn, its first bow readied, and its
+#             first arrows put in the quiver. The rest goes in the pack,
+#             and every kind in the kit is known from the start
+#   about     a line about it, for the class menu
+#   gifts     what it does better than the others, if anything; leave it
+#             out for nothing. Any of these:
+#               keen_eyed     a free search every turn, so secret doors
+#                             and traps are found in passing
+#               stealthy      a monster asleep that can see it wakes
+#                             half as often
+#               scroll_power  scrolls do half as much damage again
+#               scroll_lore   a scroll's kind is known on picking it up
+#               lightning_by_heart
+#                             lightning, cast with no scroll, and ready
+#                             again a few turns later
+#
+# A line starting with # is a comment, and blank lines don't matter. A
+# mistake stops the game, and names the line it's on.
+
+[class]
+id       = fighter
+name     = Fighter
+tile     = fighter
+hp       = 32
+strength = 1
+defense  = 1
+kit      = long_sword chain_mail potion_of_healing
+about    = Tough and strong, in chain mail, with a long sword.
+
+[class]
+id       = rogue
+name     = Rogue
+tile     = rogue
+hp       = 30
+strength = 1
+defense  = 1
+kit      = short_sword leather_armor short_bow arrow:30 potion_of_healing:2
+about    = Quick and quiet, with a bow for what's best fought from afar.
+gifts    = keen_eyed stealthy
+
+[class]
+id       = mage
+name     = Mage
+tile     = mage
+hp       = 28
+strength = 0
+defense  = 0
+kit      = dagger scroll_of_lightning scroll_of_fireball potion_of_healing:2
+about    = Frail, but with magic to hand.
+gifts    = scroll_power scroll_lore lightning_by_heart

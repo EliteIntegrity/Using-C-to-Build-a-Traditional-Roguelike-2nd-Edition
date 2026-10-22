@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{8dd341b8-5008-5046-ae88-b1a1d7a91784}</ProjectGuid>
+    <RootNamespace>AmuletsOfSDL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>..\SDL3\include;..\SDL3_ttf\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SDL3\lib\x64;..\SDL3_ttf\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;SDL3_ttf.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>..\SDL3\include;..\SDL3_ttf\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SDL3\lib\x64;..\SDL3_ttf\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;SDL3_ttf.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AStar.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\CaveGen.cpp" />
+    <ClCompile Include="src\Data.cpp" />
+    <ClCompile Include="src\DijkstraMap.cpp" />
+    <ClCompile Include="src\Effects.cpp" />
+    <ClCompile Include="src\Files.cpp" />
+    <ClCompile Include="src\Fov.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GlyphCache.cpp" />
+    <ClCompile Include="src\GlyphView.cpp" />
+    <ClCompile Include="src\HighScores.cpp" />
+    <ClCompile Include="src\Identification.cpp" />
+    <ClCompile Include="src\Inventory.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Map.cpp" />
+    <ClCompile Include="src\MessageLog.cpp" />
+    <ClCompile Include="src\Morgue.cpp" />
+    <ClCompile Include="src\Records.cpp" />
+    <ClCompile Include="src\Rng.cpp" />
+    <ClCompile Include="src\RoomGen.cpp" />
+    <ClCompile Include="src\SaveGame.cpp" />
+    <ClCompile Include="src\Settings.cpp" />
+    <ClCompile Include="src\SoundBank.cpp" />
+    <ClCompile Include="src\TileView.cpp" />
+    <ClCompile Include="src\VaultStamp.cpp" />
+    <ClCompile Include="src\Words.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AStar.h" />
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\CaveGen.h" />
+    <ClInclude Include="src\Command.h" />
+    <ClInclude Include="src\Common.h" />
+    <ClInclude Include="src\Data.h" />
+    <ClInclude Include="src\DijkstraMap.h" />
+    <ClInclude Include="src\Effects.h" />
+    <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\Files.h" />
+    <ClInclude Include="src\Fov.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\GlyphCache.h" />
+    <ClInclude Include="src\GlyphView.h" />
+    <ClInclude Include="src\HighScores.h" />
+    <ClInclude Include="src\Identification.h" />
+    <ClInclude Include="src\Inventory.h" />
+    <ClInclude Include="src\Item.h" />
+    <ClInclude Include="src\Level.h" />
+    <ClInclude Include="src\Map.h" />
+    <ClInclude Include="src\MessageLog.h" />
+    <ClInclude Include="src\Monster.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\Records.h" />
+    <ClInclude Include="src\Rng.h" />
+    <ClInclude Include="src\RoomGen.h" />
+    <ClInclude Include="src\Settings.h" />
+    <ClInclude Include="src\SoundBank.h" />
+    <ClInclude Include="src\SoundEvent.h" />
+    <ClInclude Include="src\TileView.h" />
+    <ClInclude Include="src\Trap.h" />
+    <ClInclude Include="src\VaultStamp.h" />
+    <ClInclude Include="src\View.h" />
+    <ClInclude Include="src\Words.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

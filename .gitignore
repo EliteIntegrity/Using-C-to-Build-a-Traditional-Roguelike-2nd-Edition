@@ -1,0 +1,32 @@
+# Visual Studio's working files and build output. With the solution and
+# the project in one folder, as Chapter 1 makes them, Visual Studio keeps
+# its working files in a folder named after the project, and builds the
+# program in x64, or from Chapter 16 on, beside the data and assets
+.vs/
+Chapter */AmuletsOfSDL/
+Chapter */x64/
+Chapter */AmuletsOfSDL.exe
+*.pdb
+*.ilk
+*.iobj
+*.ipdb
+*.obj
+*.tlog
+
+# Settings Visual Studio keeps for each person, such as Command Arguments.
+# The projects' own .user files come with the repository: they turn Show
+# All Files on, as Chapter 1 does
+*.user
+!Chapter */AmuletsOfSDL.vcxproj.user
+
+# CMake (Appendix B): the build folder, and each chapter's program on a Mac
+# or on Linux
+build/
+Chapter */AmuletsOfSDL
+
+# VS Code's settings, and the Mac's folder files
+.vscode/
+.DS_Store
+
+# make_repo.py's marker, so it can refresh this folder
+.made_by_make_repo

@@ -1,0 +1,264 @@
+# The monsters of Amulets of SDL: one [monster] record for each kind. The
+# game reads this file when it starts, so a change here needs no
+# recompiling: save the file, and start the game again.
+#
+# A record's keys can come in any order:
+#   id       its name in the data files: lowercase letters, digits and _
+#   name     its name in messages
+#   glyph    its character in the glyph view
+#   color    that character's red, green and blue, each from 0 to 255
+#   tile     its picture's name in assets/tiles.txt
+#   floors   the floors it's found on, from and to
+#   hp       its health
+#   damage   what each blow does, from and to, before the target's defense
+#   defense  taken off the damage of every blow it takes
+#   sight    how far it sees, in cells
+#   traits   any of these, or leave the key out for none:
+#              never_sleeps  erratic  stationary  shrieks  slow
+#              never_flees   regenerates  drains  opens_doors
+#              vault_only    never found at random, only in vaults
+#              pack:N        found N at a time, all together
+#              venomous:N    a hit poisons for N turns
+#
+# A line starting with # is a comment, and blank lines don't matter. A
+# mistake stops the game, and names the line it's on.
+
+# The shallow band, from floor 1
+
+[monster]
+id      = giant_white_rat
+name    = giant white rat
+glyph   = r
+color   = 215 215 205
+tile    = giant-white-rat
+floors  = 1 3
+hp      = 4
+damage  = 1 3
+defense = 0
+sight   = 6
+
+[monster]
+id      = fruit_bat
+name    = fruit bat
+glyph   = b
+color   = 205 120 90
+tile    = fruit-bat
+floors  = 1 3
+hp      = 3
+damage  = 1 2
+defense = 0
+sight   = 6
+traits  = never_sleeps erratic
+
+[monster]
+id      = jackal
+name    = jackal
+glyph   = j
+color   = 205 150 80
+tile    = jackal
+floors  = 1 3
+hp      = 5
+damage  = 1 3
+defense = 0
+sight   = 7
+traits  = pack:3
+
+[monster]
+id      = kobold
+name    = kobold
+glyph   = k
+color   = 110 185 95
+tile    = kobold
+floors  = 1 4
+hp      = 7
+damage  = 2 4
+defense = 1
+sight   = 6
+traits  = opens_doors
+
+[monster]
+id      = shrieker
+name    = shrieker
+glyph   = ,
+color   = 210 130 220
+tile    = shrieker
+floors  = 1 5
+hp      = 4
+damage  = 0 0
+defense = 0
+sight   = 5
+traits  = stationary shrieks
+
+[monster]
+id      = cave_spider
+name    = cave spider
+glyph   = S
+color   = 150 130 175
+tile    = cave-spider
+floors  = 2 4
+hp      = 5
+damage  = 1 3
+defense = 0
+sight   = 5
+traits  = venomous:4
+
+[monster]
+id      = goblin
+name    = goblin
+glyph   = g
+color   = 160 205 60
+tile    = goblin
+floors  = 2 5
+hp      = 9
+damage  = 2 5
+defense = 1
+sight   = 7
+traits  = opens_doors
+
+[monster]
+id      = grizzly_bear
+name    = grizzly bear
+glyph   = q
+color   = 150 100 60
+tile    = grizzly-bear
+floors  = 3 5
+hp      = 16
+damage  = 3 6
+defense = 1
+sight   = 6
+
+# The middle band, from floor 4
+
+[monster]
+id      = cave_orc
+name    = cave orc
+glyph   = o
+color   = 205 125 60
+tile    = cave-orc
+floors  = 4 6
+hp      = 16
+damage  = 4 8
+defense = 3
+sight   = 7
+traits  = opens_doors pack:2
+
+[monster]
+id      = wolf
+name    = wolf
+glyph   = C
+color   = 175 175 185
+tile    = wolf
+floors  = 4 6
+hp      = 14
+damage  = 3 7
+defense = 1
+sight   = 8
+traits  = pack:3
+
+[monster]
+id      = zombified_kobold
+name    = zombified kobold
+glyph   = z
+color   = 125 155 110
+tile    = zombified-kobold
+floors  = 4 6
+hp      = 20
+damage  = 3 6
+defense = 2
+sight   = 5
+traits  = slow never_flees
+
+[monster]
+id      = giant_spider
+name    = giant spider
+glyph   = S
+color   = 185 70 70
+tile    = giant-spider
+floors  = 5 7
+hp      = 16
+damage  = 3 7
+defense = 2
+sight   = 6
+traits  = venomous:6
+
+[monster]
+id      = skeleton_orc
+name    = skeleton orc
+glyph   = s
+color   = 230 230 215
+tile    = skeleton-orc
+floors  = 5 6
+hp      = 18
+damage  = 4 8
+defense = 4
+sight   = 6
+traits  = never_flees never_sleeps
+
+# The deep band, from floor 7
+
+[monster]
+id      = ogre
+name    = ogre
+glyph   = O
+color   = 205 165 110
+tile    = ogre
+floors  = 7 9
+hp      = 26
+damage  = 5 10
+defense = 2
+sight   = 7
+traits  = opens_doors
+
+[monster]
+id      = forest_troll
+name    = forest troll
+glyph   = T
+color   = 105 165 95
+tile    = forest-troll
+floors  = 7 9
+hp      = 22
+damage  = 4 8
+defense = 2
+sight   = 7
+traits  = regenerates
+
+[monster]
+id      = shadow_hound
+name    = shadow hound
+glyph   = Z
+color   = 130 95 180
+tile    = shadow-hound
+floors  = 7 9
+hp      = 14
+damage  = 3 7
+defense = 2
+sight   = 9
+traits  = pack:3
+
+[monster]
+id      = vampire
+name    = vampire
+glyph   = V
+color   = 205 45 65
+tile    = vampire
+floors  = 8 9
+hp      = 24
+damage  = 4 8
+defense = 3
+sight   = 8
+traits  = drains opens_doors
+
+# The vaults' own: never found at random (vault_only), but guarding a vault
+
+[monster]
+id      = young_red_dragon
+name    = young red dragon
+glyph   = D
+color   = 230 75 50
+tile    = young-red-dragon
+floors  = 9 9
+hp      = 50
+damage  = 6 12
+defense = 5
+sight   = 9
+traits  = never_flees vault_only

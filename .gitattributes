@@ -1,0 +1,11 @@
+# Keep every file exactly as it is: the code with Windows line endings, as
+# Visual Studio writes it, and the data and assets as the chapters made
+# them. Visual Studio, Clang, GCC, and CMake all read Windows line endings,
+# and from Chapter 16 on, the game removes the carriage returns from its
+# data files itself.
+* -text
+
+# SDL and SDL_ttf are other people's code, so GitHub's language bar counts
+# only the game, which is C++.
+SDL3/** linguist-vendored
+SDL3_ttf/** linguist-vendored

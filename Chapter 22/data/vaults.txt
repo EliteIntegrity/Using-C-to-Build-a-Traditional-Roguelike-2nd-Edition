@@ -1,0 +1,138 @@
+# The vaults of Amulets of SDL: rooms made by hand. One in three floors has
+# a treasure vault, built inside a room big enough to have floor all
+# around it, or, in a cave, wherever its door opens onto the cave. The game
+# reads this file when it starts, so a vault can be added here without
+# recompiling: save the file, and start the game again.
+#
+# A record's keys:
+#   id        its name: lowercase letters, digits and _
+#   floors    the floors it can be on, from and to
+#   amulet    yes for an Amulet's vault, one of which is on each of
+#             floors 3, 6 and 9; leave it out for a treasure vault
+#   guardian  the monster each G is, by its id: leave it out if there's
+#             no G. The guardians wake together, as a pack
+#   map       the vault, a row of cells to a line, each line starting
+#             with a |:
+#               #  wall          .  floor        +  door
+#               S  secret door   ^  a trap       $  treasure
+#               m  a monster from the floor's band
+#               G  a guardian    A  the Amulet, in an Amulet's vault
+#               (a space is outside the vault)
+#
+# A vault is from 3 x 3 to 15 x 9 cells, closed all around. Its one way in,
+# a door or a secret door on its edge, reaches everything inside it.
+#
+# A line starting with # is a comment, and blank lines don't matter. A
+# mistake stops the game, and names the line it's on.
+
+[vault]
+id     = closet
+floors = 1 9
+map    =
+|#######
+|#$.^.$#
+|#..m..#
+|#$...$#
+|###+###
+
+[vault]
+id     = secret_cache
+floors = 1 9
+map    =
+|#####
+|#$^$#
+|#$.$#
+|#...#
+|##S##
+
+[vault]
+id       = guardroom
+floors   = 2 5
+guardian = goblin
+map      =
+|#########
+|#$.G.G.$#
+|#.......#
+|#$.^.^.$#
+|####+####
+
+[vault]
+id     = pillared_hall
+floors = 3 9
+map    =
+|#########
+|#m.$.$.m#
+|#.#.#.#.#
+|#$.^.^.$#
+|#.#.#.#.#
+|#m.....m#
+|####+####
+
+[vault]
+id     = inner_sanctum
+floors = 4 9
+map    =
+|#########
+|#m.....m#
+|#.#####.#
+|#.#$$$#.#
+|#.##S##.#
+|#...^...#
+|####+####
+
+[vault]
+id       = barracks
+floors   = 5 8
+guardian = cave_orc
+map      =
+|###########
+|#G.......G#
+|#.#.#.#.#.#
+|#$.......$#
+|#.#.#.#.#.#
+|#G...^...G#
+|#####+#####
+
+# The Amulets' vaults, one for each of floors 3, 6 and 9
+
+[vault]
+id       = goblin_warband
+floors   = 3 3
+amulet   = yes
+guardian = goblin
+map      =
+|###########
+|#G...^...G#
+|#.#######.#
+|#.#$.A.$#.#
+|#.###+###.#
+|#G.......G#
+|#####+#####
+
+[vault]
+id       = orc_hold
+floors   = 6 6
+amulet   = yes
+guardian = cave_orc
+map      =
+|###########
+|#G.G...G.G#
+|#.###+###.#
+|#.#$.A.$#.#
+|#.#######.#
+|#^.......^#
+|#####+#####
+
+[vault]
+id       = dragon_lair
+floors   = 9 9
+amulet   = yes
+guardian = young_red_dragon
+map      =
+|###########
+|#$.$...$.$#
+|#.........#
+|#$...G...$#
+|#....A....#
+|#$.......$#
+|#####+#####

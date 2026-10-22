@@ -1,0 +1,172 @@
+# The items of Amulets of SDL: one record for each kind. The record's type
+# is the item's class: [potion], [scroll], [weapon], [armor] or [gold]. The
+# game reads this file when it starts, so a change here needs no
+# recompiling: save the file, and start the game again.
+#
+# Every record has these keys, in any order:
+#   id         its name in the data files: lowercase letters, digits and _
+#   name       the kind's own name, as in "a potion of healing"
+#   tile       its picture's name in assets/tiles.txt
+#   frequency  how common it is: a kind with 10 is found twice as often as
+#              one with 5, and one with 0 never
+#
+# And a record of each class has more:
+#   [potion] and [scroll]:
+#     effect   heal, heal_fully, strengthen, teleport, map_floor,
+#              identify, poison, regenerate, confuse or frighten
+#   [weapon]:
+#     damage   what each blow does, from and to, before strength and the
+#              target's defense
+#   [armor]:
+#     defense  taken off the damage of every blow the wearer takes
+#     noisy    yes if walking in it makes a noise; leave it out for no
+#
+# The game needs the short_sword, the player's first weapon, and gold,
+# which lies in piles of its own and is never chosen as an item. There
+# can be up to 10 kinds of potion, one for each color.
+#
+# A line starting with # is a comment, and blank lines don't matter. A
+# mistake stops the game, and names the line it's on.
+
+# Potions: ! in the glyph view, and a color each run until known
+
+[potion]
+id        = potion_of_healing
+name      = healing
+tile      = potion
+frequency = 7
+effect    = heal
+
+[potion]
+id        = potion_of_greater_healing
+name      = greater healing
+tile      = potion
+frequency = 4
+effect    = heal_fully
+
+[potion]
+id        = potion_of_strength
+name      = strength
+tile      = potion
+frequency = 3
+effect    = strengthen
+
+[potion]
+id        = potion_of_poison
+name      = poison
+tile      = potion
+frequency = 5
+effect    = poison
+
+[potion]
+id        = potion_of_regeneration
+name      = regeneration
+tile      = potion
+frequency = 4
+effect    = regenerate
+
+[potion]
+id        = potion_of_confusion
+name      = confusion
+tile      = potion
+frequency = 5
+effect    = confuse
+
+# Scrolls: ? in the glyph view, and a title each run until known
+
+[scroll]
+id        = scroll_of_teleportation
+name      = teleportation
+tile      = scroll
+frequency = 5
+effect    = teleport
+
+[scroll]
+id        = scroll_of_magic_mapping
+name      = magic mapping
+tile      = scroll
+frequency = 4
+effect    = map_floor
+
+[scroll]
+id        = scroll_of_identify
+name      = identify
+tile      = scroll
+frequency = 6
+effect    = identify
+
+[scroll]
+id        = scroll_of_fear
+name      = fear
+tile      = scroll
+frequency = 4
+effect    = frighten
+
+# Weapons: ) in the glyph view
+
+[weapon]
+id        = dagger
+name      = dagger
+tile      = dagger
+frequency = 3
+damage    = 1 4
+
+[weapon]
+id        = short_sword
+name      = short sword
+tile      = sword
+frequency = 2
+damage    = 2 6
+
+[weapon]
+id        = spear
+name      = spear
+tile      = spear
+frequency = 2
+damage    = 2 8
+
+[weapon]
+id        = mace
+name      = mace
+tile      = mace
+frequency = 2
+damage    = 3 7
+
+[weapon]
+id        = long_sword
+name      = long sword
+tile      = sword
+frequency = 1
+damage    = 3 9
+
+# Armor: [ in the glyph view
+
+[armor]
+id        = leather_armor
+name      = leather armor
+tile      = leather-armor
+frequency = 3
+defense   = 1
+
+[armor]
+id        = chain_mail
+name      = chain mail
+tile      = metal-armor
+frequency = 2
+defense   = 3
+
+[armor]
+id        = plate_armor
+name      = plate armor
+tile      = metal-armor
+frequency = 1
+defense   = 5
+noisy     = yes
+
+# Gold: $ in the glyph view. A pile's count is its number of pieces
+
+[gold]
+id        = gold
+name      = gold
+tile      = gold
+frequency = 0

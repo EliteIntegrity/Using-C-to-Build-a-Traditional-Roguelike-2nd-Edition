@@ -1,0 +1,155 @@
+# The sounds of Amulets of SDL: which files each thing in the game plays,
+# from the assets/sounds folder. When a sound has more than one file, one
+# of them is chosen at random each time, so a hit doesn't sound the same
+# every time. The game reads this file when it starts, so a change here
+# needs no recompiling: save the file, and start the game again.
+#
+# Every [sound] record has these keys, in any order:
+#   event   what makes the sound: one of the events below
+#   files   its files, one or more, in assets/sounds
+#
+# The events:
+# hit, kill, hurt, shoot, miss, lightning, fire, door_open, door_close,
+# stairs, pick_up, gold, amulet, drop, wield, quiver, drink, read, heal,
+# poisoned, confused, teleport, fear, trap, alarm, shriek, found, bump,
+# breaks, refused, low_health, death, choose and win. An event left out
+# makes no sound.
+#
+# A line starting with # is a comment, and blank lines don't matter. A
+# mistake stops the game, and names the line it's on.
+
+[sound]
+event = hit
+files = hit_1.wav hit_2.wav hit_3.wav
+
+[sound]
+event = kill
+files = kill_1.wav kill_2.wav kill_3.wav
+
+[sound]
+event = hurt
+files = hurt_1.wav hurt_2.wav hurt_3.wav
+
+[sound]
+event = shoot
+files = shoot_1.wav shoot_2.wav shoot_3.wav
+
+[sound]
+event = miss
+files = miss_1.wav miss_2.wav miss_3.wav
+
+[sound]
+event = lightning
+files = lightning_1.wav lightning_2.wav
+
+[sound]
+event = fire
+files = fire_1.wav fire_2.wav fire_3.wav
+
+[sound]
+event = door_open
+files = door_open_1.wav door_open_2.wav door_open_3.wav
+
+[sound]
+event = door_close
+files = door_close_1.wav door_close_2.wav door_close_3.wav
+
+[sound]
+event = stairs
+files = stairs_1.wav stairs_2.wav
+
+[sound]
+event = pick_up
+files = pick_up_1.wav pick_up_2.wav pick_up_3.wav
+
+[sound]
+event = gold
+files = gold_1.wav gold_2.wav gold_3.wav
+
+[sound]
+event = amulet
+files = amulet_1.wav amulet_2.wav amulet_3.wav
+
+[sound]
+event = drop
+files = drop_1.wav drop_2.wav drop_3.wav
+
+[sound]
+event = wield
+files = wield_1.wav wield_2.wav wield_3.wav
+
+[sound]
+event = quiver
+files = quiver_1.wav quiver_2.wav
+
+[sound]
+event = drink
+files = drink_1.wav drink_2.wav drink_3.wav
+
+[sound]
+event = read
+files = read_1.wav read_2.wav
+
+[sound]
+event = heal
+files = heal_1.wav heal_2.wav heal_3.wav
+
+[sound]
+event = poisoned
+files = poisoned_1.wav poisoned_2.wav
+
+[sound]
+event = confused
+files = confused_1.wav confused_2.wav
+
+[sound]
+event = teleport
+files = teleport_1.wav teleport_2.wav teleport_3.wav
+
+[sound]
+event = fear
+files = fear_1.wav fear_2.wav
+
+[sound]
+event = trap
+files = trap_1.wav trap_2.wav trap_3.wav
+
+[sound]
+event = alarm
+files = alarm_1.wav alarm_2.wav alarm_3.wav
+
+[sound]
+event = shriek
+files = shriek_1.wav shriek_2.wav shriek_3.wav
+
+[sound]
+event = found
+files = found_1.wav found_2.wav
+
+[sound]
+event = bump
+files = bump_1.wav bump_2.wav bump_3.wav
+
+[sound]
+event = breaks
+files = breaks_1.wav breaks_2.wav breaks_3.wav
+
+[sound]
+event = refused
+files = refused_1.wav refused_2.wav
+
+[sound]
+event = low_health
+files = low_health_1.wav
+
+[sound]
+event = death
+files = death_1.wav death_2.wav
+
+[sound]
+event = choose
+files = choose_1.wav choose_2.wav
+
+[sound]
+event = win
+files = win_1.wav
