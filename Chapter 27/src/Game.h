@@ -359,6 +359,7 @@ private:
     GameState state_ = GameState::ClassMenu;
     GameState stateBeforeHelp_ = GameState::Title;   // where ? came from
     InventoryAction inventoryAction_ = InventoryAction::Use;
+    GameState keyState_ = GameState::Playing;   // where the last key went down
 
     // The command that's running, a step at a time, if one is
     std::optional<Command> command_;

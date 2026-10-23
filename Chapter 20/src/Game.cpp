@@ -1418,6 +1418,18 @@ void Game::handleKey(const SDL_KeyboardEvent& key)
         return;
     }
 
+    // A key held down repeats, and its repeats count only in the state it
+    // was pressed in. A key that changes the state has done its job, and
+    // its repeats would go on to do something else in the new one
+    if (!key.repeat)
+    {
+        keyState_ = state_;
+    }
+    else if (state_ != keyState_)
+    {
+        return;
+    }
+
     // The keys above work in every state. What the others do depends on
     // the state the game is in
     switch (state_)

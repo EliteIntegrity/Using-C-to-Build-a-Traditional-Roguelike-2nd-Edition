@@ -629,7 +629,15 @@ bool Game::run()
                 // F7's vault is in the middle of the map
                 focus = { MAP_W / 2, MAP_H / 2 };
             }
-            view_->camera().follow(focus);
+
+            // While aiming, the camera moves only when the cursor leaves
+            // the view. The mouse moves the cursor, and a camera that
+            // followed it would slide the map out from under the mouse
+            if (state_ != GameState::Targeting ||
+                !view_->camera().shows(lookCursor_))
+            {
+                view_->camera().follow(focus);
+            }
             draw();
             redraw_ = false;
         }
@@ -1560,6 +1568,18 @@ void Game::handleKey(const SDL_KeyboardEvent& key)
         {
             stepVault();
         }
+        return;
+    }
+
+    // A key held down repeats, and its repeats count only in the state it
+    // was pressed in. A key that changes the state has done its job, and
+    // its repeats would go on to do something else in the new one
+    if (!key.repeat)
+    {
+        keyState_ = state_;
+    }
+    else if (state_ != keyState_)
+    {
         return;
     }
 

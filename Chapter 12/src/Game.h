@@ -155,6 +155,7 @@ private:
 
     GameState state_ = GameState::Playing;
     InventoryAction inventoryAction_ = InventoryAction::Use;
+    GameState keyState_ = GameState::Playing;   // where the last key went down
 
     // Where the mouse is, in the game's picture, while it's over the map
     // view. Empty while it's anywhere else
